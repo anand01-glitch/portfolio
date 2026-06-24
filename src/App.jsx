@@ -148,7 +148,7 @@ function App() {
 
       <div className="absolute inset-0 bg-hero-glow opacity-80 pointer-events-none" />
       <div className="relative isolate overflow-hidden py-8 px-6 md:px-10 xl:px-16">
-        <header className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/10 px-5 py-4 shadow-glass backdrop-blur-xl dark:border-slate-700/60 dark:bg-slate-900/70">
+        <header className="mx-auto flex w-full flex-col gap-4 rounded-3xl border border-white/10 bg-white/10 px-5 py-4 shadow-glass backdrop-blur-xl dark:border-slate-700/60 dark:bg-slate-900/70 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-3xl bg-gradient-to-br from-violet-500 to-cyan-400 p-2 text-white shadow-lg shadow-cyan-500/20">
               <FaStar className="h-full w-full" />
@@ -158,7 +158,7 @@ function App() {
               <p className="text-xs text-slate-500 dark:text-slate-400">Software Developer Portfolio</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 justify-between">
             <button onClick={handleThemeToggle} className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/90 px-3 py-2 text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-100 dark:border-slate-700/70 dark:bg-slate-800/90 dark:text-slate-100 dark:hover:bg-slate-700">
               {theme === 'dark' ? <FaSun className="h-4 w-4" /> : <FaMoon className="h-4 w-4" />}
             </button>
@@ -170,6 +170,13 @@ function App() {
               ))}
             </nav>
           </div>
+          <nav className="flex flex-wrap justify-center gap-2 text-sm text-slate-600 dark:text-slate-300 md:hidden">
+            {['home', 'about', 'projects', 'skills', 'education', 'contact'].map((section) => (
+              <button key={section} onClick={() => scrollTo(section)} className="rounded-full border border-slate-200/50 bg-slate-100/80 px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-200 dark:border-slate-700/50 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:bg-slate-700">
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
+          </nav>
         </header>
 
         <main className="mx-auto mt-10 max-w-7xl space-y-24">
@@ -185,18 +192,18 @@ function App() {
                 <p className="max-w-2xl text-slate-400 sm:text-lg">I build elegant, high-performance applications that combine clean design, strong engineering, and accessible user experiences.</p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <button onClick={() => scrollTo('projects')} className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.01]">View Projects</button>
-                <a href="#" className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-slate-950/10 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-300 hover:bg-slate-900/80">Download Resume</a>
-                <button onClick={() => scrollTo('contact')} className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-slate-300 hover:bg-white/15">Contact Me</button>
+              <div className="grid gap-3 sm:flex sm:flex-wrap sm:items-center">
+                <button onClick={() => scrollTo('projects')} className="w-full rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.01] sm:w-auto">View Projects</button>
+                <a href="#" className="w-full rounded-full border border-slate-200/70 bg-slate-950/10 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-300 hover:bg-slate-900/80 sm:w-auto">Download Resume</a>
+                <button onClick={() => scrollTo('contact')} className="w-full rounded-full border border-slate-200/70 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-slate-300 hover:bg-white/15 sm:w-auto">Contact Me</button>
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} className="relative flex flex-col items-center justify-center gap-6 rounded-[40px] border border-white/10 bg-white/10 p-6 shadow-glass backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/80">
               <div className="absolute -left-12 top-12 h-24 w-24 rounded-full bg-cyan-400/20 blur-2xl" />
               <div className="absolute -right-10 bottom-14 h-28 w-28 rounded-full bg-violet-500/20 blur-3xl" />
-              <div className="relative flex h-72 w-72 items-center justify-center rounded-[36px] border border-white/15 bg-slate-950/70 shadow-2xl shadow-slate-950/30">
-                <div className="h-64 w-64 rounded-[32px] bg-gradient-to-br from-slate-800 to-slate-900 p-2 shadow-inner shadow-black/30">
+              <div className="relative flex h-[min(24rem,80vw)] w-[min(24rem,80vw)] items-center justify-center rounded-[36px] border border-white/15 bg-slate-950/70 shadow-2xl shadow-slate-950/30">
+                <div className="h-[min(20rem,70vw)] w-[min(20rem,70vw)] rounded-[32px] bg-gradient-to-br from-slate-800 to-slate-900 p-2 shadow-inner shadow-black/30">
                   <div className="h-full w-full rounded-[28px] bg-slate-800" />
                 </div>
               </div>
@@ -236,7 +243,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="space-y-6 rounded-[32px] border border-white/10 bg-white/10 p-8 shadow-glass backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/80">
+            <div className="space-y-6 rounded-[32px] border border-white/10 bg-white/10 p-6 sm:p-8 shadow-glass backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/80">
               <div className="flex items-center gap-3 text-slate-300">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-500/15 text-cyan-300">
                   <MdSchool className="h-6 w-6" />
