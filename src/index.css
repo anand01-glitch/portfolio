@@ -40,3 +40,23 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  #root, .fixed, .absolute, header, main, footer {
+    display: none !important;
+  }
+  #printable-resume {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
