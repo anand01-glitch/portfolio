@@ -14,6 +14,7 @@ const personal = {
   linkedIn: 'https://www.linkedin.com/in/anand-tk-770719287',
   github: 'https://github.com/anand01-glitch',
   whatsapp: '918891525301',
+  whatsappDisplay: '+91 88915 25301',
 };
 
 const typedPhrases = [
@@ -437,7 +438,7 @@ function App() {
             <div className="space-y-6 rounded-[36px] border border-white/10 bg-white/10 p-8 shadow-glass backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/80">
               <div className="space-y-4 rounded-3xl bg-slate-950/80 p-6 text-slate-300">
                 <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Reach out</p>
-                <p className="text-lg font-semibold">Email, LinkedIn, GitHub</p>
+                <p className="text-lg font-semibold">Email, LinkedIn, GitHub, WhatsApp</p>
                 <div className="space-y-4 text-sm">
                   <div>
                     <p className="text-slate-400">Email</p>
@@ -450,6 +451,10 @@ function App() {
                   <div>
                     <p className="text-slate-400">GitHub</p>
                     <a href={personal.github} target="_blank" rel="noreferrer" className="text-cyan-300">github.com/anand01-glitch</a>
+                  </div>
+                  <div>
+                    <p className="text-slate-400">WhatsApp</p>
+                    <a href={`https://wa.me/${personal.whatsapp}`} target="_blank" rel="noreferrer" className="text-cyan-300">{personal.whatsappDisplay}</a>
                   </div>
                 </div>
               </div>
