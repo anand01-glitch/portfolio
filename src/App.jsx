@@ -465,6 +465,7 @@ function App() {
                   <FaWhatsapp className="h-4 w-4" /> Chat on WhatsApp
                 </a>
               </div>
+            </div>
           </section>
         </main>
 
