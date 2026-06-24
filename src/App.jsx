@@ -247,10 +247,6 @@ function App() {
         <main className="mx-auto mt-10 max-w-7xl space-y-24">
           <section id="home" className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] xl:items-center">
             <motion.div initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/20 bg-slate-200/40 dark:bg-white/10 px-4 py-2 text-sm text-slate-800 dark:text-slate-200 shadow-glass backdrop-blur-xl">
-                <FaLightbulb className="text-cyan-300" />
-                Premium Apple-inspired UI
-              </div>
               <div className="space-y-4">
                 <p className="text-lg uppercase tracking-[0.3em] text-cyan-300">Hello, I&apos;m Anand</p>
                 <h1 className="text-5xl font-semibold leading-tight tracking-tight md:text-6xl text-slate-900 dark:text-white">Crafting modern web experiences with a premium developer mindset.</h1>
