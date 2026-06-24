@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaArrowUp, FaBriefcase, FaEnvelope, FaGithub, FaLinkedin, FaLightbulb, FaMoon, FaSun, FaStar } from 'react-icons/fa';
+import { FaArrowUp, FaBriefcase, FaEnvelope, FaGithub, FaLinkedin, FaLightbulb, FaMoon, FaSun, FaStar, FaWhatsapp } from 'react-icons/fa';
 import { MdSchool } from 'react-icons/md';
 import { FiExternalLink } from 'react-icons/fi';
 import { BsCodeSlash } from 'react-icons/bs';
@@ -13,6 +13,7 @@ const personal = {
   email: 'anandsivadas123@gmail.com',
   linkedIn: 'https://www.linkedin.com/in/anand-tk-770719287',
   github: 'https://github.com/anand01-glitch',
+  whatsapp: '918891525301',
 };
 
 const typedPhrases = [
@@ -455,8 +456,10 @@ function App() {
               <div className="rounded-3xl border border-slate-700/50 bg-slate-950/80 p-6 text-slate-300">
                 <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Newsletter</p>
                 <p className="mt-3 text-sm leading-7">I respond promptly and enjoy collaborating on modern web applications, AI systems, and product-focused development work.</p>
+                <a href={`https://wa.me/${personal.whatsapp}?text=Hi%20Anand%2C%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect.`} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-3xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400">
+                  <FaWhatsapp className="h-4 w-4" /> Chat on WhatsApp
+                </a>
               </div>
-            </div>
           </section>
         </main>
 
